@@ -25,9 +25,10 @@ public class sorting {
 
                 // Compare the key with each element on the left of it until we find the correct
                 // position
-                while (j >= 0 && Array[j] > key) { 
+                while (j >= 0 && Array[j] > key) {
                     System.out.print("Key: " + key + "; ");
-                    System.out.print("Comparing " + Array[j] + " and " + Array[j + 1] + ": ");
+                    System.out.print("Comparing to: " + Array[j] + ": ");
+
                     System.out.println(java.util.Arrays.toString(Array));
                     Array[j + 1] = Array[j]; // Shift the element to the right
                     j = j - 1; // Move to the previous element to compare with the key
@@ -54,7 +55,7 @@ public class sorting {
                 swapped = false;
 
                 for (j = 0; j < n - i - 1; j++) {
-                    System.out.print("Comparing " + arr[j] + " and " + arr[j + 1] + ": ");
+                    System.out.print("Compared " + arr[j] + " and " + arr[j + 1] + ": ");
                     if (arr[j] > arr[j + 1]) {
                         temp = arr[j];
                         arr[j] = arr[j + 1];
@@ -70,12 +71,13 @@ public class sorting {
 
         }
 
-        void SelectionSort(){
-            int[]  array = this.ArrayToBeSorted;
+        void SelectionSort() {
+            int[] array = this.ArrayToBeSorted;
             array = array.clone();
+            System.out.println("Unsorted Array: " + java.util.Arrays.toString(array));
             int length = array.length;
-            for (int i = 0; i < length-1; i++) {
-                // In the first iteration, it gets the index 0 
+            for (int i = 0; i < length - 1; i++) {
+                // In the first iteration, it gets the index 0
                 int minIndex = i;
                 // Compares index 0 to the index 1 onwards
                 for (int j = i + 1; j < length; j++) {
@@ -83,29 +85,24 @@ public class sorting {
                         minIndex = j;
                     }
                 }
-    
+
                 // Swapping the index 0 and the minimum element
+                System.out.print("Comparing " + array[i] + " to " + array[i + 1] + ": ");
+                System.out.println(java.util.Arrays.toString(array));
+
                 int temp = array[minIndex];
                 array[minIndex] = array[i];
                 array[i] = temp;
-    
+
                 // Prints the process of sorting
-                System.out.print("Iteration " + (i + 1) + ":  ");
-                for (int k = 0; k < length; k++) {
-                    System.out.print(array[k] + "  ");
-                }
-                System.out.println();
+
             }
-    
+
             // Prints the Sorted array
-            System.out.print("\nSorted array:  ");
-            for (int i = 0; i < length; i++) {
-                System.out.print(array[i] + "  ");
-            }
-            System.out.println();
+            System.out.println("Sorted Array: " + java.util.Arrays.toString(array));
+
         }
     }
-
 
     public static void main(String[] args) {
 
