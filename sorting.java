@@ -1,4 +1,3 @@
-import java.security.Key;
 import java.util.*;
 
 public class sorting {
@@ -26,16 +25,13 @@ public class sorting {
                 // Compare the key with each element on the left of it until we find the correct
                 // position
                 while (j >= 0 && Array[j] > key) {
-                    System.out.print("Key: " + key + "; ");
-                    System.out.print("Comparing to: " + Array[j] + ": ");
-
-                    System.out.println(java.util.Arrays.toString(Array));
                     Array[j + 1] = Array[j]; // Shift the element to the right
                     j = j - 1; // Move to the previous element to compare with the key
 
                 }
                 // Insert the key at its correct position
                 Array[j + 1] = key;
+                System.out.println(java.util.Arrays.toString(Array));
 
             }
             // print array
@@ -53,7 +49,6 @@ public class sorting {
             System.out.println("Unsorted Array: " + java.util.Arrays.toString(arr));
             for (i = 0; i < n - 1; i++) {
                 swapped = false;
-
                 for (j = 0; j < n - i - 1; j++) {
                     System.out.print("Compared " + arr[j] + " and " + arr[j + 1] + ": ");
                     if (arr[j] > arr[j + 1]) {
@@ -87,7 +82,6 @@ public class sorting {
                 }
 
                 // Swapping the index 0 and the minimum element
-                System.out.print("Comparing " + array[i] + " to " + array[i + 1] + ": ");
                 System.out.println(java.util.Arrays.toString(array));
 
                 int temp = array[minIndex];
